@@ -1,3 +1,5 @@
+<img width="250px" src="https://neon.tech/brand/neon-logo-dark-color.svg" />
+
 # Neon Authorize + PropelAuth Example
 
 A quick start template demonstrating secure user authentication and authorization using Neon Authorize with PropelAuth integration.
