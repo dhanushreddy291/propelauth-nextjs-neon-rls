@@ -1,42 +1,110 @@
 # Neon Authorize + PropelAuth Example
 
-This repository is a guided getting started example for Neon Authorize + PropelAuth
+A quick start template demonstrating secure user authentication and authorization using Neon Authorize with PropelAuth integration.
 
-1. Create a Neon project
-2. Create a [PropelAuth](https://www.propelauth.com/) application
-3. Set up the `Application URL`, `Default redirect path after login` and `Default redirect path after logout` to `http://localhost:3000`, `/api/auth/callback` and `/api/auth/logout` respectively in the PropelAuth dashboard
+## Features
 
-You can set these values on the `Frontend Integration` tab on PropelAuth
+- Next.js application with TypeScript
+- User authentication powered by PropelAuth
+- Row-level security using Neon Authorize
+- Database migrations with Drizzle ORM
+- Ready-to-deploy configuration for Vercel, Netlify, and Render
+
+## Prerequisites
+
+- [Neon](https://neon.tech) account with a new project
+- [PropelAuth](https://www.propelauth.com) account with a new application
+- Node.js 18+ installed locally
+
+## One-Click Deploy
+
+Deploy directly to your preferred hosting platform:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/neondatabase-labs/propelauth-nextjs-neon-authorize&env=DATABASE_URL,DATABASE_AUTHENTICATED_URL,NEXT_PUBLIC_AUTH_URL,PROPELAUTH_API_KEY,PROPELAUTH_VERIFIER_KEY,PROPELAUTH_REDIRECT_URI&project-name=neon-authorize-propelauth&repository-name=neon-authorize-propelauth)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/neondatabase-labs/propelauth-nextjs-neon-authorize)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/neondatabase-labs/propelauth-nextjs-neon-authorize)
+
+> **Important**: After deployment, set `PROPELAUTH_REDIRECT_URI` to your deployment URL and add it to "Additional Frontend Locations" in the PropelAuth dashboard.
+
+## Local Development Setup
+
+### 1. Configure PropelAuth
+
+1. Navigate to your PropelAuth dashboard
+2. Under "Frontend Integration", configure:
+   - Application URL: `http://localhost:3000`
+   - Default redirect path after login: `/api/auth/callback`
+   - Default redirect path after logout: `/api/auth/logout`
+
 ![PropelAuth Frontend Integration](/images/propelauth-frontend-integration-page.png)
 
-4. Go to the Neon Console, and click "Authorize" to access the Neon Authorize configuration UI
-5. Add a new authentication provider, and use `{YOUR_PROPEL_AUTH_URL}/.well-known/jwks.json` as the JWKS URL (replace `{YOUR_PROPEL_AUTH_URL}` with your actual PropelAuth URL)
+### 2. Set Up Neon Authorize
+
+1. Open your Neon Console and click "Authorize"
+2. Add a new authentication provider
+3. Set the JWKS URL to: `{YOUR_PROPEL_AUTH_URL}/.well-known/jwks.json`
+   > Replace `{YOUR_PROPEL_AUTH_URL}` with your PropelAuth URL
+
 ![Neon Authorize Add Auth Provider](/images/neon-authorize-add-auth-provider.png)
 
-6. Follow the steps in the UI to setup the roles for Neon Authorize. You should ignore the schema related steps if you're following this guide
-7. Clone this repository and run `npm install`
-8. Create a `.env` file in the root of this project and add the following:
+### 3. Local Installation
 
+1. Clone the repository:
+
+```bash
+git clone https://github.com/neondatabase-labs/propelauth-nextjs-neon-authorize
+cd propelauth-nextjs-neon-authorize
 ```
-# For the `neondb_owner` role.
-DATABASE_URL=
-# For the `authenticated`, passwordless role.
-DATABASE_AUTHENTICATED_URL=
 
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create `.env` file with the following variables:
+
+```env
+# Database connections
+DATABASE_URL=              # neondb_owner role connection
+DATABASE_AUTHENTICATED_URL= # authenticated role connection
+
+# PropelAuth configuration
 NEXT_PUBLIC_AUTH_URL=
 PROPELAUTH_API_KEY=
 PROPELAUTH_VERIFIER_KEY=
 PROPELAUTH_REDIRECT_URI="http://localhost:3000/api/auth/callback"
 ```
 
-You can get the `PROPELAUTH_API_KEY` and `PROPELAUTH_VERIFIER_KEY` from the `Backend Integration` tab on PropelAuth
+> Get your PropelAuth keys from the "Backend Integration" tab:
+> ![PropelAuth Backend Integration](/images/propelauth-backend-integration-page.png)
 
-![PropelAuth Backend Integration](/images/propelauth-backend-integration-page.png)
+4. Set up the database:
 
-9. Run `npm run drizzle:generate` to generate the migrations
-10. Run `npm run drizzle:migrate` to apply the migrations
-11. Run `npm run dev` or `bun run dev`
-12. Open your browser and go to `http://localhost:3000`
-13. Login and play around!
+```bash
+npm run drizzle:generate  # Generate migrations
+npm run drizzle:migrate  # Apply migrations
+```
+
+5. Start the development server:
+
+```bash
+npm run dev
+```
+
+6. Visit `http://localhost:3000` to see the application running
 
 ![Neon Authorize + PropelAuth Example](/images/neon-authorize-propelauth-example.png)
+
+## Important: Production Setup
+
+> **Note**: Before deploying to production, you must transition from a demo to a live PropelAuth environment:
+
+1. In your PropelAuth dashboard, click "Go Live"
+2. Set up the required DNS records for your domain as specified in PropelAuth's dashboard
+3. Update your environment variables with the new production credentials
+4. Update your authentication configuration in Neon Authorize with the new JWKS URL
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
