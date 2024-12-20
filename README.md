@@ -109,6 +109,16 @@ For more detailed examples of how to implement client-side and server-side row-l
 3. Update your environment variables with the new production credentials
 4. Update your authentication configuration in Neon Authorize with the new JWKS URL
 
+## Learn More
+
+- [Neon Authorize Tutorial](https://neon.tech/docs/guides/neon-authorize-tutorial)
+- [Simplify RLS with Drizzle](https://neon.tech/docs/guides/neon-authorize-drizzle)
+- [PropelAuth + Neon Authorize](https://neon.tech/docs/guides/neon-authorize-propelauth)
+
+## Authors
+
+- [Dhanush Reddy](https://github.com/dhanushreddy291)
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
