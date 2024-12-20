@@ -96,6 +96,8 @@ npm run dev
 
 ![Neon Authorize + PropelAuth Example](/images/neon-authorize-propelauth-example.png)
 
+For more detailed examples of how to implement client-side and server-side row-level security independently, please visit the dedicated pages: `/client-side` and `/server-side`.
+
 ## Important: Production Setup
 
 > **Note**: Before deploying to production, you must transition from a demo to a live PropelAuth environment:
