@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: neon-authorize-propelauth
+    runtime: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+      - key: DATABASE_URL
+        sync: false # Securely configure the database URL in Render Dashboard
+
+      - key: DATABASE_AUTHENTICATED_URL
+        sync: false # Securely configure the authenticated database URL in Render Dashboard
+
+      - key: NEXT_PUBLIC_AUTH_URL
+        sync: false # Configure auth URL in Render Dashboard
+
+      - key: PROPELAUTH_API_KEY
+        sync: false # Securely configure PropelAuth API key in Render Dashboard
+
+      - key: PROPELAUTH_VERIFIER_KEY
+        sync: false # Securely configure PropelAuth verifier key in Render Dashboard
+
+      - key: PROPELAUTH_REDIRECT_URI
+        value: "https://${RENDER_EXTERNAL_URL}/api/auth/callback" # Dynamic redirect URI based on Render's external URL
