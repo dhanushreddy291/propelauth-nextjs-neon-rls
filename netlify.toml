@@ -1,8 +1,3 @@
-[build]
-  
-  command = "npm install && npm run build"
-  publish = ".next"
-
 [build.environment]
   NEXT_TELEMETRY_DISABLED = "1"
   NODE_VERSION = "20"
@@ -27,12 +22,3 @@
   PROPELAUTH_API_KEY = "Required: PropelAuth API key"
   PROPELAUTH_VERIFIER_KEY = "Required: PropelAuth verifier key"
   PROPELAUTH_REDIRECT_URI = "Required: Authentication callback URL"
-
-# Redirects and rewrites
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/api/:splat"
-  status = 200
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
