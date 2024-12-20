@@ -1,8 +1,8 @@
 <img width="250px" src="https://neon.tech/brand/neon-logo-dark-color.svg" />
 
-# Neon Authorize + PropelAuth Example
+# Neon Authorize + PropelAuth Example (SQL from the Frontend and Backend)
 
-A quick start template demonstrating secure user authentication and authorization using Neon Authorize with PropelAuth integration.
+A quick start Next.js template demonstrating secure user authentication and authorization using Neon Authorize with PropelAuth integration. This guide primarily uses SQL from the backend to enforce row-level security policies, while also showcasing how to implement client-side row-level security as an example.
 
 ## Features
 
@@ -98,7 +98,7 @@ npm run dev
 
 ![Neon Authorize + PropelAuth Example](/images/neon-authorize-propelauth-example.png)
 
-For more detailed examples of how to implement client-side and server-side row-level security independently, please visit the dedicated pages: `/client-side` and `/server-side`.
+For more detailed examples of how to implement client-side (SQL from the Frontend) and server-side (SQL from the Backend) row-level security independently, please visit the dedicated pages: `/client-side` and `/server-side`.
 
 ## Important: Production Setup
 
