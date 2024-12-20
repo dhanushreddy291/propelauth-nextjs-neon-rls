@@ -98,7 +98,8 @@ npm run dev
 
 ![Neon Authorize + PropelAuth Example](/images/neon-authorize-propelauth-example.png)
 
-For more detailed examples of how to implement client-side (SQL from the Frontend) and server-side (SQL from the Backend) row-level security independently, please visit the dedicated pages: `/client-side` and `/server-side`.
+For comprehensive examples on implementing row-level security independently on the client-side (SQL from the frontend) and server-side (SQL from the backend), please visit the respective pages: `/client-side` and `/server-side`.
+
 
 ## Important: Production Setup
 
