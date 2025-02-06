@@ -1,14 +1,14 @@
 <img width="250px" src="https://neon.tech/brand/neon-logo-dark-color.svg" />
 
-# Neon Authorize + PropelAuth Example (SQL from the Frontend and Backend)
+# Neon RLS Authorize + PropelAuth Example (SQL from the Frontend and Backend)
 
-A quick start Next.js template demonstrating secure user authentication and authorization using Neon Authorize with PropelAuth integration. This guide primarily uses SQL from the backend to enforce row-level security policies, while also showcasing how to implement client-side row-level security as an example.
+A quick start Next.js template demonstrating secure user authentication and authorization using Neon RLS Authorize with PropelAuth integration. This guide primarily uses SQL from the backend to enforce row-level security policies, while also showcasing how to implement client-side row-level security as an example.
 
 ## Features
 
 - Next.js application with TypeScript
 - User authentication powered by PropelAuth
-- Row-level security using Neon Authorize
+- Row-level security using Neon RLS Authorize
 - Database migrations with Drizzle ORM
 - Ready-to-deploy configuration for Vercel, Netlify, and Render
 
@@ -22,9 +22,9 @@ A quick start Next.js template demonstrating secure user authentication and auth
 
 Deploy directly to your preferred hosting platform:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/neondatabase-labs/propelauth-nextjs-neon-authorize&env=DATABASE_URL,DATABASE_AUTHENTICATED_URL,NEXT_PUBLIC_AUTH_URL,PROPELAUTH_API_KEY,PROPELAUTH_VERIFIER_KEY,PROPELAUTH_REDIRECT_URI&project-name=neon-authorize-propelauth&repository-name=neon-authorize-propelauth)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/neondatabase-labs/propelauth-nextjs-neon-authorize)
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/neondatabase-labs/propelauth-nextjs-neon-authorize)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/neondatabase-labs/propelauth-nextjs-neon-rls-authorize&env=DATABASE_URL,DATABASE_AUTHENTICATED_URL,NEXT_PUBLIC_AUTH_URL,PROPELAUTH_API_KEY,PROPELAUTH_VERIFIER_KEY,PROPELAUTH_REDIRECT_URI&project-name=neon-rls-authorize-propelauth&repository-name=neon-rls-authorize-propelauth)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/neondatabase-labs/propelauth-nextjs-neon-rls-authorize)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/neondatabase-labs/propelauth-nextjs-neon-rls-authorize)
 
 > **Important**: After deployment, set `PROPELAUTH_REDIRECT_URI` to your deployment URL and add it to "Additional Frontend Locations" in the PropelAuth dashboard.
 
@@ -40,22 +40,22 @@ Deploy directly to your preferred hosting platform:
 
 ![PropelAuth Frontend Integration](/images/propelauth-frontend-integration-page.png)
 
-### 2. Set Up Neon Authorize
+### 2. Set Up Neon RLS Authorize
 
-1. Open your Neon Console and click "Authorize"
+1. Open your Neon Console and click "RLS Authorize"
 2. Add a new authentication provider
 3. Set the JWKS URL to: `{YOUR_PROPEL_AUTH_URL}/.well-known/jwks.json`
    > Replace `{YOUR_PROPEL_AUTH_URL}` with your PropelAuth URL
 
-![Neon Authorize Add Auth Provider](/images/neon-authorize-add-auth-provider.png)
+![Neon RLS Authorize Add Auth Provider](/images/neon-authorize-add-auth-provider.png)
 
 ### 3. Local Installation
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/neondatabase-labs/propelauth-nextjs-neon-authorize
-cd propelauth-nextjs-neon-authorize
+git clone https://github.com/neondatabase-labs/propelauth-nextjs-neon-rls-authorize
+cd propelauth-nextjs-neon-rls-authorize
 ```
 
 2. Install dependencies:
@@ -96,7 +96,7 @@ npm run dev
 
 6. Visit `http://localhost:3000` to see the application running
 
-![Neon Authorize + PropelAuth Example](/images/neon-authorize-propelauth-example.png)
+![Neon RLS Authorize + PropelAuth Example](/images/neon-authorize-propelauth-example.png)
 
 For comprehensive examples on implementing row-level security independently on the client-side (SQL from the frontend) and server-side (SQL from the backend), please visit the respective pages: `/client-side` and `/server-side`.
 
@@ -108,13 +108,13 @@ For comprehensive examples on implementing row-level security independently on t
 1. In your PropelAuth dashboard, click "Go Live"
 2. Set up the required DNS records for your domain as specified in PropelAuth's dashboard
 3. Update your environment variables with the new production credentials
-4. Update your authentication configuration in Neon Authorize with the new JWKS URL
+4. Update your authentication configuration in Neon RLS Authorize with the new JWKS URL
 
 ## Learn More
 
-- [Neon Authorize Tutorial](https://neon.tech/docs/guides/neon-authorize-tutorial)
+- [Neon RLS Authorize Tutorial](https://neon.tech/docs/guides/neon-authorize-tutorial)
 - [Simplify RLS with Drizzle](https://neon.tech/docs/guides/neon-authorize-drizzle)
-- [PropelAuth + Neon Authorize](https://neon.tech/docs/guides/neon-authorize-propelauth)
+- [PropelAuth + Neon RLS Authorize](https://neon.tech/docs/guides/neon-authorize-propelauth)
 
 ## Authors
 
