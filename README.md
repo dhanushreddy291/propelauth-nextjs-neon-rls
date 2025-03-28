@@ -45,9 +45,14 @@ Deploy directly to your preferred hosting platform:
 1. Open your Neon Console and click on "RLS" under the "Settings" Tab.
 2. Add a new authentication provider
 3. Set the JWKS URL to: `{YOUR_PROPEL_AUTH_URL}/.well-known/jwks.json`
+   
    > Replace `{YOUR_PROPEL_AUTH_URL}` with your PropelAuth URL
+   
+   ![Neon RLS Add Auth Provider](/images/neon-rls-add-auth-provider.png)
 
-![Neon RLS Add Auth Provider](/images/neon-rls-add-auth-provider.png)
+4. Follow the steps in the UI to setup the roles for Neon RLS. You should ignore the schema related steps if you're following this guide.
+5. Note down the connection strings for both the **`neondb_owner` role** and the **`authenticated, passwordless` role**. You'll need both. The `neondb_owner` role has full privileges and is used for migrations, while the `authenticated` role will be used by the application and will have its access restricted by RLS.
+   ![Neon RLS Connection Strings](/images/neon-rls-env-values.png)
 
 ### 3. Local Installation
 
